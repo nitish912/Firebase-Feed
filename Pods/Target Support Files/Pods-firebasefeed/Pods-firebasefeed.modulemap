@@ -1,0 +1,6 @@
+framework module Pods_firebasefeed {
+  umbrella header "Pods-firebasefeed-umbrella.h"
+
+  export *
+  module * { export * }
+}

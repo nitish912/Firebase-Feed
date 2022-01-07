@@ -2,8 +2,7 @@
 //  SceneDelegate.swift
 //  firebasefeed
 //
-//  Created by BYSOS 2019 on 05/01/22.
-//
+
 
 import UIKit
 
@@ -16,7 +15,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+      
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        
+      if  defaults.string(forKey: ProjectModelKeys.userId) == nil {
+        let vc = ViewController()
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+      }
+        
+      else{
+        
+        let vc = feedViewController()
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+        
+      }
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
